@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>财经行情数据</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<link href="free/homestyle.css" rel="stylesheet">
+<link href="free/public.css" rel="stylesheet">
+<link href="free/global-2015.css" rel="stylesheet">
+<script src="src/lib/jquery.js"></script>
+
+<script>
+ //财经行情
+$(document).ready(function(){
+	 var str='';
+   	 $.ajax({
+      	url:'/test/index1.php',
+	  	type:'get',
+		dataType: 'json',
+
+	success:function(msg){
+	  console.log(msg);
+	  console.log(msg.list[0][1]);
+	  // var obj = eval('(' + data + ')');
+	  var obj=msg;
+	  
+			for(var i=0;i<obj.list[0].length;i++){
+			
+			if(obj.list[0][i]['Nation']==''){
+			var time= new Array(); //定义一数组
+            time=obj.list[0][i]['UpdateTime'].split("("); //字符分割 
+			 
+			var shijian=time[1].split(')')[0];
+			 
+			var data = getMyDate(parseInt(shijian));
+			// console.log(data);
+			str=str+'<li ng-repeat="item in group" class="ng-scope"> <i ng-if="!item.IsEcoIndicator" class="hxzx-icon ng-scope" ng-class=""></i> <div ng-if="!item.IsEcoIndicator" class="ng-scope">';
+			str=str+'<span class="time-hx ng-binding">'+data+'</span><span class="txt-hx ng-binding" ng-bind-html="item.Title" ng-class=""><div>'
+			str=str+obj.list[0][i]['Title']+'</div></span></div></li>';
+			}else{
+				var time= new Array(); //定义一数组
+             time=obj.list[0][i]['UpdateTime'].split("("); //字符分割 
+			 
+			 var shijian=time[1].split(')')[0];
+			 
+			var data = getMyDate(parseInt(shijian));
+			// console.log(data,"1");
+			str=str+'<li ng-repeat="item in group" class="ng-scope"><i class="hxll-icon ng-scope" ng-if="item.IsEcoIndicator" ng-class=""></i><div ng-if="item.IsEcoIndicator" class="ng-scope">';
+			str=str+'<span class="time-hx ng-binding">'+data+'</span><div class="ll-hx"><span class="xx-'+obj.list[0][i]['StarLevel']+'"></span>';
+			str=str+'<span class="bg-country '+obj.list[0][i]['Nation']+'"></span><p ng-bind-html="item.Title" class="ng-binding">';
+			str=str+obj.list[0][i]['Title']+'</p></div><div class="lx-hx"><p>前值<br><em class="ng-binding">';
+			str=str+obj.list[0][i]['Prev']+'%</em> </p><p>预期<br><em class="ng-binding">';
+			str=str+obj.list[0][i]['Pred']+'%</em></p><p> 实际<br><em class="blue-hx ng-binding" ng-class="">';
+			str=str+obj.list[0][i]['Curr']+'%</em> </p></div></div></li>';
+			
+			}
+
+			}
+			
+			
+			
+			 $('.list-hx').append(str);
+	  }
+   });
+
+ 
+ });
+
+function getMyDate(str){  
+            var oDate = new Date(str),  
+            oYear = oDate.getFullYear(),  
+            oMonth = oDate.getMonth()+1,  
+            oDay = oDate.getDate(),  
+            oHour = oDate.getHours(),  
+            oMin = oDate.getMinutes(),  
+            oSen = oDate.getSeconds(),  
+            oTime =  getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间  
+            return oTime;  
+        }; 
+        //补0操作
+      function getzf(num){  
+          if(parseInt(num) < 10){  
+              num = '0'+num;  
+          }  
+          return num;  
+      }
+ 
+
+</script>
+</head>
+<body style="background:url(http://www.99gendan.com/images/bg22.jpg) no-repeat;background-size:100% 100%;">
+
+	 
+	<div class="wrapper shadow_box" style="min-height: 374px;">
+        <div class="info-area">
+            <div class="main-hx  ng-scope" ng-modules="ModuleFirewireNewsletter" ng-controller="FirewireNewsletterCtrl">
+                <div class="hx-content ng-scope" ng-repeat="group in groupList">
+                    <h3 class="ng-binding">星期一&nbsp;&nbsp;&nbsp; 2017-10-30</h3>
+                    <ul class="list-hx">
+         
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	</body>
+	</html>

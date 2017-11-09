@@ -1,0 +1,178 @@
+<html>
+
+<head>
+
+<title>免费财经日历数据接口- 由99跟单提供</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <script src="../../js/calendar/laydate.js"></script>
+<link href="../../css/calendar/global-2015.css" rel="stylesheet">
+<link href="../../css/calendar/homestyle.css" rel="stylesheet">
+<link href="../../css/calendar/public.css" rel="stylesheet">
+<link href="../../css/calendar/cal.css" rel="stylesheet">
+<script src="../../js/calendar/jquery-1.7.2.min.js"></script>
+ <script src="../../js/calendar/angular.min.js"></script>
+<script src="../../js/calendar/angular.ng-modules.js"></script>
+<script src="../../js/calendar/angular-sanitize.min.js"></script>
+<script src="../../js/calendar/angular-animate.min.js"></script>
+<script src="../../js/calendar/elif.js"></script>
+<script src="../../js/calendar/commonFilter.js"></script>
+<script src="../../js/calendar/ng-infinite-scroll.js"></script>
+ <script src="../../js/calendar/baiduTemplate.js"></script>
+ <script src="../../js/calendar/vtrack.min.js"></script>
+  <script src="../../js/calendar/vendor.eebe4a5f.js"></script>
+ <script src="../../js/calendar/vcode-1.0.0.min.js"></script>
+</head>
+
+<body >
+<div class="info-content" ng-modules="ModuleEconomicCalendar" ng-controller="EconomicCalendarCtrl">
+<div class="wrapper cj-wrapper" style="min-height: 325px;">
+<div class="info-area">
+<div class="cj-ctop"> 
+   <div class="choose-cj">
+        <div class="ctime-cj">
+            <ul class="weektime-cj">
+
+         
+
+<li ng-click="SearchDay('2017-10-26')" >2017-10-26 (周四) </li>
+<li ng-click="SearchDay('2017-10-27')" >2017-10-27 (周五) </li>
+<li ng-click="SearchDay('2017-10-28')">2017-10-28 (周六) </li>
+<li ng-click="SearchDay('2017-10-29')">2017-10-29 (周日) </li>
+ <li  ng-click="SearchDay('2017-10-30')">2017-10-30 (周一)</li>
+<li ng-click="SearchDay('2017-10-31')" >2017-10-31 (周二)</li>
+<li ng-click="SearchDay('2017-11-01')" class="active">2017-11-01 (周三)</li>
+            </ul>
+
+            <span class="prve-cj" ng-click="loadDay(8)"><i></i></span>
+            <span class="next-cj" ng-click="loadDay(0)"><i></i></span>
+        </div>
+
+      
+        
+        <div class="ccountry-cj">
+            <ul>
+                <li ng-click="SearchCountry()"><i></i>全部</li>
+                <li ng-click="SearchCountry(10011)"><i></i><img src="../../img/cal/gq-demo02.jpg" alt="">EUR</li>
+                <li ng-click="SearchCountry(10001)"><i></i><img src="../../img/cal/gq-demo03.jpg" alt="">USD</li>
+                <li ng-click="SearchCountry(10002)"><i></i><img src="../../img/cal/gq-demo04.jpg" alt="">JPY</li>
+                <li ng-click="SearchCountry(10004)"><i></i><img src="../../img/cal/gq-demo05.jpg" alt="">GBP</li>
+                <li ng-click="SearchCountry(10019)"><i></i><img src="../../img/cal/gq-demo06.jpg" alt="">CHF</li>
+                <li ng-click="SearchCountry(10010)"><i></i><img src="../../img/cal/gq-demo07.jpg" alt="">AUD</li>
+                <li ng-click="SearchCountry(10007)"><i></i><img src="../../img/cal/gq-demo08.jpg" alt="">CAD</li>
+                <li ng-click="SearchCountry(10021)"><i></i><img src="../../img/cal/gq-demo09.jpg" alt="">NZD</li>
+                <li ng-click="SearchCountry(10003)"><i></i><img src="../../img/cal/gq-demo10.jpg" alt="">CNY</li>
+            </ul>
+            
+        </div>
+    </div><!--end 筛选-->
+    
+   
+<div class="main-hx">
+    <div class="hx-content">
+        <h3>
+            <span>新闻日历</span>
+        </h3>
+
+        <div class="bars-cj">
+            <span class="txtbar01">时间</span>
+            <span class="txtbar02">重要性</span>
+            <span class="txtbar03">国家地区</span>
+            <span class="txtbar04">指标内容</span>
+            <span class="txtbar05">前值</span>
+            <span class="txtbar06">预测值</span>
+            <span class="txtbar07">公布值</span>
+            
+        </div>
+        <ul class="list-hx list-cj">
+            <li ng-if="groupFinancialCalendarData==null||groupFinancialCalendarData.length==0">
+                <span>今日无财经数据公布！</span></li>
+            <li ng-if="groupFinancialCalendarData.length>0" ng-repeat="group in groupFinancialCalendarData" ng-cloak>
+                <span class="time-hx">{{group[0].Time||'------'}}</span>
+                <span class="{{'xx-'+group[0].Weightiness}}"></span>
+                <span class="bg-country {{group[0].CountryName |NationToPY}}"></span>
+                <div class="ll-cj">
+                    <div class="lx-hx lx-cj " ng-repeat="item in group">
+                        <div class="lxx-cj" id="{{'lxx-cj'+item.ColumnCode}}">
+                            <span>{{item.Content}}</span>
+                            <p class="txt-cj01">{{item.Previous}}</p>
+                            <p class="txt-cj02">{{item.Predict}}</p>
+                            <p class="txt-cj03">{{item.CurrentValue||'等待中'}}</p>
+                            
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div><!--end hx-content列表内容-->
+    <div class="hx-content jx-content">
+        <h3>
+            <span>财经事件</span>
+        </h3>
+        <div class="bars-cj">
+            <span class="txtbar01">时间</span>
+            <span class="txtbar02">地区</span>
+            <span class="txtbar03">事件</span>
+        </div>
+        <ul class="list-hx list-cj">
+            <li ng-if="FinancialEvent==null||FinancialEvent.length==0" ng-cloak>
+                <span>今日无重要财经事件公布！</span>
+            </li>
+            <li ng-if="FinancialEvent.length>0" ng-repeat="item in FinancialEvent" ng-cloak>
+                <span class="time-hx">{{item.FinancialTime||'------'}}</span>
+                <span style="margin-left: 110px" title="{{item.Area}}">{{item.Area|cut:true:6 }}</span>
+                <span class="othertxt-cj">{{item.FinancialEvent}}</span>
+            </li>
+        </ul>
+    </div><!--end hx-content列表内容-->
+    <div class="hx-content jx-content">
+        <h3>
+            <span>央行动态</span>
+        </h3>
+        <div class="bars-cj">
+            <span class="txtbar01">时间</span>
+            <span class="txtbar02">地区</span>
+            <span class="txtbar03">事件</span>
+        </div>
+        <ul class="list-hx list-cj">
+            <li ng-if="CentralBankNews==null||CentralBankNews.length==0" ng-cloak>
+                <span>今日无重要央行动态公布！</span>
+            </li>
+            <li ng-if="CentralBankNews.length>0" ng-repeat="item in CentralBankNews" ng-cloak>
+                <span class="time-hx">{{item.FinancialTime||'------'}}</span>
+                <span style="margin-left: 110px" title="{{item.Area}}">{{item.Area|cut:true:6}}</span>
+                <span class="othertxt-cj">{{item.FinancialEvent}}</span>
+            </li>
+        </ul>
+    </div><!--end hx-content列表内容-->
+    <div class="hx-content  jx-content jxx-content">
+        <h3>
+            <span>假日预告</span>
+        </h3>
+        <div class="bars-cj">
+            <span class="txtbar02">地区</span>
+            <span class="txtbar03">事件</span>
+        </div>
+        <ul class="list-hx list-cj">
+            <li ng-if="HolidayReport==null||HolidayReport.length==0" ng-cloak>
+                <span>今日无重要假期预告公布！</span>
+            </li>
+            <li ng-if="HolidayReport.length>0" ng-repeat="item in HolidayReport" ng-cloak>
+                <span class="time-hx" title="{{item.Area}}">{{item.Area|cut:true:6 }}</span>
+                <span style="left: 124px" class="othertxt-cj ">{{ item.FinancialEvent}}</span>
+            </li>
+        </ul>
+    </div><!--end hx-content列表内容-->
+
+</div><!--end 列表-->
+
+</div>
+</div>
+</div>
+</div>
+<script src="../../js/calendar/jquery-ui-1.10.0.min.js"></script>
+<script src="../../js/calendar/cal.js"></script>
+    </body>
+    </html>

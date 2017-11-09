@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>财经行情</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="grey">
+	<meta name="format-detection" content="telephone=no">
+	<link href="../../css/home/homestyle.css" rel="stylesheet">
+	<link href="../../css/pub/public.css" rel="stylesheet">
+	<link href="../../css/pub/global-2015.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../css/quotation/quotation.css"/>
+</head>
+<body>
+
+	<div class="top">
+		<div class="returnArrow" ></div>
+		<div class="top_text">财经行情</div>
+	</div>
+		<div class="quotation">
+			<div class="wrapper shadow_box" style="min-height: 374px;">
+		        <div class="info-area">
+		            <div class="main-hx  ng-scope" ng-modules="ModuleFirewireNewsletter" ng-controller="FirewireNewsletterCtrl">
+		                <div class="hx-content ng-scope" ng-repeat="group in groupList">
+		                    <h3 class="getDate"></h3>
+		                    <ul class="list-hx"></ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>	
+</body>
+	<script type="text/javascript" src="../../lib/jquery.js"></script>
+	<script type="text/javascript" src="../../js/quotation/quotation.js"></script>
+</html>

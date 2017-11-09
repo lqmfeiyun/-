@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="grey">
+	<meta name="format-detection" content="telephone=no">
+	<link href="../../css/home/homestyle.css" rel="stylesheet">
+	<link href="../../css/pub/public.css" rel="stylesheet">
+	<link href="../../css/pub/global-2015.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../css/home/home.css"/>
+</head>
+<body>
+	<div>
+		<div class="top">首页</div>
+		<!-- swiper -->
+		<div class="swiper">
+			<div class="banner">
+		      <div id="bannerbox" class="bannerbox">
+		        <div id="bannerlist" class="bannerlist clearfix">
+				  <a href="#"><img src="../../img/home/banner1.jpg"/></a>
+				  <a href="#"><img src="../../img/home/banner2.jpg"/</a>
+				  <a href="#"><img src="../../img/home/banner3.jpg"/></a>
+				  <a href="#"><img src="../../img/home/banner4.jpg"/></a>
+				  <a href="#"><img src="../../img/home/banner5.jpg"/></a>
+				</div>
+		      </div>
+		      <ol id="bannerindex" class="bannerindex">
+		        <li></li>
+		        <li></li>
+		        <li></li>
+		        <li></li>
+		        <li></li>
+		      </ol>
+		    </div>
+		    <i></i>
+		</div>
+		<!-- 功能选择 -->
+		<div class="function">
+			<div class="function_piece" id="quotation">
+				<div class="img">
+					<img src="../../img/hq.png">
+					<div class="function_piece_text">财经行情</div>
+				</div>
+			</div>
+			<div class="function_piece">
+				<div class="img">
+					<img src="../../img/hq.png">
+					<div class="function_piece_text">行情分析</div>
+				</div>
+			</div>
+			<div class="function_piece" id="calendar">
+				<div class="img">
+					<img src="../../img/calendar.png">
+					<div class="function_piece_text">财经日历</div>
+				</div>
+			</div>
+			<div class="function_piece">
+				<div class="img">
+					<img src="../../img/hq.png">
+					<div class="function_piece_text">行情分析</div>
+				</div>
+			</div>
+			<div class="function_piece">
+				<div class="img">
+					<img src="../../img/hq.png">
+					<div class="function_piece_text">行情分析</div>
+				</div>
+			</div>
+		</div>
+		<div class="quotation">
+			<div class="wrapper shadow_box" style="min-height: 374px;">
+		        <div class="info-area">
+		            <div class="main-hx  ng-scope" ng-modules="ModuleFirewireNewsletter" ng-controller="FirewireNewsletterCtrl">
+		                <div class="hx-content ng-scope" ng-repeat="group in groupList">
+		                    <h3 class="getDate"></h3>
+		                    <ul class="list-hx"></ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>	
+	</div>
+	<div class="tap">
+		<div class="tap_page">
+			<img src="../../img/homeGold.png"/>
+			<div class="tap_text">首页</div>
+		</div>
+		<div class="tap_page">
+			<img src="../../img/homeGray.png"/>
+			<div class="tap_text">首页</div>
+		</div>
+		<div class="tap_page">
+			<img src="../../img/homeGray.png"/>
+			<div class="tap_text">首页</div>
+		</div>
+		<div class="tap_page">
+			<img src="../../img/homeGray.png"/>
+			<div class="tap_text">首页</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="../../lib/jquery.js"></script>
+	<script type="text/javascript" src="../../js/home/swiper.js"></script>
+	<script type="text/javascript" src="../../js/home/home.js"></script>
+</html>
