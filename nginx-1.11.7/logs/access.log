@@ -4014,3 +4014,5 @@
 127.0.0.1 - - [10/Nov/2017:01:19:09 +0800] "GET / HTTP/1.1" 403 169 "-" "Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0"
 127.0.0.1 - - [10/Nov/2017:01:19:11 +0800] "GET / HTTP/1.1" 403 169 "-" "Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0"
 127.0.0.1 - - [10/Nov/2017:01:19:12 +0800] "GET / HTTP/1.1" 403 169 "-" "Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0"
+127.0.0.1 - - [10/Nov/2017:01:30:40 +0800] "GET / HTTP/1.1" 403 169 "-" "Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0"
+127.0.0.1 - - [10/Nov/2017:01:35:44 +0800] "GET http://config.pinyin.sogou.com/api/toolbox/geturl.php?h=96E57C7DAD1BD719F49ECF800BE29709&v=8.6.0.1482&r=0000_sogou_pinyin_79a HTTP/1.1" 404 169 "-" "SOGOU_UPDATER"

@@ -425,3 +425,5 @@
 2017/11/10 01:19:09 [error] 7276#6812: *1 directory index of "I:/lqm/workForQianfeiying/clf/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
 2017/11/10 01:19:11 [error] 7276#6812: *1 directory index of "I:/lqm/workForQianfeiying/clf/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
 2017/11/10 01:19:12 [error] 7276#6812: *1 directory index of "I:/lqm/workForQianfeiying/clf/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2017/11/10 01:30:40 [error] 7276#6812: *2 directory index of "I:/lqm/workForQianfeiying/clf/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2017/11/10 01:35:44 [error] 7276#6812: *3 CreateFile() "I:/lqm/workForQianfeiying/clf/api/toolbox/geturl.php" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET http://config.pinyin.sogou.com/api/toolbox/geturl.php?h=96E57C7DAD1BD719F49ECF800BE29709&v=8.6.0.1482&r=0000_sogou_pinyin_79a HTTP/1.1", host: "config.pinyin.sogou.com"
